@@ -1,0 +1,18 @@
+we have to count the no of zeros and ones first and then write back 0 and 1 in the ums array
+T.C.>-O(n)
+S.C.>-O(1)
+________________________________________________
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+      int one=0,zero=0; 
+      int n=nums.size(); 
+      for(int i=0;i<n;i++){
+        if(nums[i]==0) zero++;
+        else if(nums[i]==1) one++;
+      }
+      for(int i=0;i<zero;i++) nums[i]=0;
+      for(int i=zero;i<zero+one;i++) nums[i]=1;
+      for(int i=zero+one;i<n;i++) nums[i]=2;
+    }
+};
